@@ -1,16 +1,9 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Download, Play, Check } from "lucide-react";
+import { ArrowRight, Download, Play } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
 import { FlagPattern } from "./ui/FlagPattern";
-
-const badges = [
-  "Works offline",
-  "On-device AI",
-  "Built in Cameroon",
-  "No account required",
-];
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -66,24 +59,6 @@ export function Hero() {
               </a>
             </motion.div>
 
-            <motion.ul
-              initial={initial}
-              animate={animate}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="mt-6 flex flex-wrap gap-x-6 gap-y-3 md:mt-7"
-            >
-              {badges.map((b) => (
-                <li
-                  key={b}
-                  className="flex items-center gap-2 text-sm text-slate-400"
-                >
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cm-green/10 ring-1 ring-cm-green/30">
-                    <Check className="h-3 w-3 text-cm-green" />
-                  </span>
-                  {b}
-                </li>
-              ))}
-            </motion.ul>
           </div>
 
           <div className="relative">

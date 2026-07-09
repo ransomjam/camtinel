@@ -61,7 +61,6 @@ export function BusinessModel() {
     <section id="pricing" className="section" aria-labelledby="pricing-title">
       <div className="container-page">
         <SectionHeader
-          eyebrow="Sustainability"
           title={
             <span id="pricing-title">
               Free for citizens. Paid where it belongs.

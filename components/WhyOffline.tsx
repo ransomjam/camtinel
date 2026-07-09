@@ -73,7 +73,6 @@ export function WhyOffline() {
     <section id="offline" className="section" aria-labelledby="offline-title">
       <div className="container-page">
         <SectionHeader
-          eyebrow="On-device AI"
           title={<span id="offline-title">Why offline changes everything.</span>}
         />
 

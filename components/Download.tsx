@@ -45,13 +45,6 @@ export function Download() {
 
           <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div>
-              <Reveal>
-                <div className="eyebrow">
-                  <span className="h-px w-6 bg-cm-green" />
-                  Download
-                </div>
-              </Reveal>
-
               <Reveal delay={0.05}>
                 <h2 id="download-title" className="h2 mt-3">
                   Get Camtinel on your phone.
@@ -76,10 +69,10 @@ export function Download() {
 
               <Reveal delay={0.25}>
                 <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-white/[0.06] pt-6 sm:grid-cols-4">
-                  <MiniStat label="Version" value="1.2.0" />
-                  <MiniStat label="Platform" value="Android 8+" />
-                  <MiniStat label="Size" value="≈ 148 MB" />
-                  <MiniStat label="Price" value="Free beta" />
+                  <MiniStat value="1.2.0" />
+                  <MiniStat value="Android 8+" />
+                  <MiniStat value="≈ 148 MB" />
+                  <MiniStat value="Free beta" />
                 </dl>
               </Reveal>
             </div>
@@ -108,13 +101,10 @@ export function Download() {
   );
 }
 
-function MiniStat({ label, value }: { label: string; value: string }) {
+function MiniStat({ value }: { value: string }) {
   return (
     <div>
-      <dt className="text-[10px] uppercase tracking-wider text-slate-500">
-        {label}
-      </dt>
-      <dd className="mt-1 text-sm font-semibold text-white">{value}</dd>
+      <dd className="text-sm font-semibold text-white">{value}</dd>
     </div>
   );
 }

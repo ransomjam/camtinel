@@ -100,7 +100,6 @@ export function Problem() {
     <section id="problem" className="section" aria-labelledby="problem-title">
       <div className="container-page">
         <SectionHeader
-          eyebrow="The problem"
           title={
             <span id="problem-title">
               Cybercrime has never been this easy to run at scale.

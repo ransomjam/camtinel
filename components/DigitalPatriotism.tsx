@@ -68,7 +68,6 @@ export function DigitalPatriotism() {
       />
       <div className="container-page relative">
         <SectionHeader
-          eyebrow="Digital patriotism"
           title={
             <span id="patriotism-title">
               Protecting citizens online protects Cameroon's digital future.

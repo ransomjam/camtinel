@@ -75,7 +75,6 @@ export function AISection() {
     <section id="ai" className="section" aria-labelledby="ai-title">
       <div className="container-page">
         <SectionHeader
-          eyebrow="The engine"
           title={<span id="ai-title">Meet the Camtinel AI Engine.</span>}
         />
 
@@ -86,13 +85,8 @@ export function AISection() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-cm-green via-cm-yellow to-cm-red">
                   <Brain className="h-6 w-6 text-white" />
                 </div>
-                <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-500">
-                    Trained specifically for
-                  </div>
-                  <div className="text-base font-semibold text-white">
-                    Cybersecurity detection
-                  </div>
+                <div className="text-base font-semibold text-white">
+                  Cybersecurity detection
                 </div>
               </div>
 

@@ -61,7 +61,6 @@ export function ResponsibleAI() {
     >
       <div className="container-page">
         <SectionHeader
-          eyebrow="Responsible AI"
           title={
             <span id="responsible-title">
               The same models that scale attacks can scale defense.

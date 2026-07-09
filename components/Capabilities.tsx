@@ -126,7 +126,6 @@ export function Capabilities() {
     >
       <div className="container-page">
         <SectionHeader
-          eyebrow="Shipped - v1.2"
           title={
             <span id="capabilities-title">What Camtinel does today.</span>
           }

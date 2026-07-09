@@ -25,7 +25,6 @@ export function ExplainableAI() {
     >
       <div className="container-page">
         <SectionHeader
-          eyebrow="Explainable AI"
           title={
             <span id="explainable-title">
               Every verdict shows the reasoning behind it.
@@ -68,21 +67,8 @@ export function ExplainableAI() {
               />
 
               <Card className="border-white/[0.1] bg-ink-900/70 p-8 backdrop-blur">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cm-red">
-                    <span className="h-px w-6 bg-cm-red" />
-                    Analysis result
-                  </span>
-                  <span className="rounded-full border border-cm-red/30 bg-cm-red/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-cm-red">
-                    Delete immediately
-                  </span>
-                </div>
-
                 <div className="mt-6 flex items-end justify-between border-b border-white/[0.06] pb-6">
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-slate-500">
-                      Risk score
-                    </div>
                     <div className="mt-2 flex items-baseline gap-1">
                       <span className="font-mono text-6xl font-semibold text-white">
                         96
@@ -93,9 +79,6 @@ export function ExplainableAI() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-xs uppercase tracking-wider text-slate-500">
-                      Verdict
-                    </div>
                     <div className="mt-1 text-sm font-semibold text-cm-red">
                       High risk
                     </div>
@@ -108,9 +91,6 @@ export function ExplainableAI() {
                 </div>
 
                 <div className="mt-6">
-                  <div className="text-xs uppercase tracking-wider text-slate-500">
-                    Detection reasons
-                  </div>
                   <ul className="mt-3 space-y-2">
                     {reasons.map((r, i) => (
                       <motion.li
@@ -133,9 +113,6 @@ export function ExplainableAI() {
                 <div className="mt-6 flex items-start gap-3 rounded-xl border border-cm-red/25 bg-cm-red/[0.05] p-4">
                   <AlertCircle className="mt-0.5 h-4 w-4 flex-none text-cm-red" />
                   <div>
-                    <div className="text-sm font-semibold text-white">
-                      Recommendation
-                    </div>
                     <div className="text-sm text-slate-300">
                       Delete this message. Don't click any links or reply. Report the sender to your telecom.
                     </div>

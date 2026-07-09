@@ -15,12 +15,9 @@ export function Field({ label, value, tone = "default", className }: Props) {
         className,
       )}
     >
-      <div className="text-[10px] uppercase tracking-wider text-slate-500">
-        {label}
-      </div>
       <div
         className={cn(
-          "mt-1 text-sm font-medium",
+          "text-sm font-medium",
           tone === "danger" ? "text-red-300" : "text-white",
         )}
       >

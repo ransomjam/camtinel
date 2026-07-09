@@ -45,9 +45,6 @@ export function PhoneMockup() {
               <div className="text-[11px] font-semibold text-white">
                 Camtinel
               </div>
-              <div className="text-[9px] text-slate-500">
-                Analysis complete, 0.3s
-              </div>
             </div>
           </div>
 
@@ -59,12 +56,8 @@ export function PhoneMockup() {
           >
             <div className="flex items-center gap-2">
               <AlertTriangle className="h-3.5 w-3.5 text-cm-red" />
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-cm-red">
-                High Risk
-              </span>
             </div>
             <div className="mt-2 flex items-baseline justify-between">
-              <span className="text-[10px] text-slate-400">Risk score</span>
               <span className="font-mono text-3xl font-semibold text-white">
                 97<span className="text-lg text-cm-red">%</span>
               </span>
@@ -80,15 +73,12 @@ export function PhoneMockup() {
           </motion.div>
 
           <div className="mt-3 space-y-2">
-            <Row label="Threat" value="Mobile Money fraud" />
-            <Row label="Impersonated brand" value="MTN" danger />
+            <Row value="Mobile Money fraud" />
+            <Row value="MTN" danger />
           </div>
 
           <div className="mt-3 rounded-xl border border-white/[0.06] bg-white/[0.02] p-3">
-            <div className="text-[9px] font-medium uppercase tracking-wider text-slate-500">
-              Reasons
-            </div>
-            <ul className="mt-2 space-y-1.5">
+            <ul className="space-y-1.5">
               {reasons.map((r, i) => (
                 <motion.li
                   key={r}
@@ -121,39 +111,27 @@ export function PhoneMockup() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.7, duration: 0.5 }}
         className="absolute -left-4 top-32 hidden rounded-xl border border-white/10 bg-ink-800/90 px-3 py-2 shadow-xl backdrop-blur sm:block"
-      >
-        <div className="flex items-center gap-1.5 text-[10px] font-semibold text-cm-green">
-          <span className="h-1.5 w-1.5 rounded-full bg-cm-green" />
-          Offline
-        </div>
-        <div className="text-[10px] text-slate-400">Runs on-device</div>
-      </motion.div>
+      />
 
       <motion.div
         initial={reduce ? false : { opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.9, duration: 0.5 }}
         className="absolute -right-3 bottom-32 hidden rounded-xl border border-white/10 bg-ink-800/90 px-3 py-2 shadow-xl backdrop-blur sm:block"
-      >
-        <div className="text-[10px] font-semibold text-cm-yellow">Explainable</div>
-        <div className="text-[10px] text-slate-400">3 signals shown</div>
-      </motion.div>
+      />
     </div>
   );
 }
 
 function Row({
-  label,
   value,
   danger,
 }: {
-  label: string;
   value: string;
   danger?: boolean;
 }) {
   return (
     <div className="flex items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2">
-      <span className="text-[10px] text-slate-500">{label}</span>
       <span
         className={`text-[11px] font-medium ${
           danger ? "text-cm-red" : "text-white"

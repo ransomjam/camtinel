@@ -87,7 +87,6 @@ export function Roadmap() {
     <section id="roadmap" className="section" aria-labelledby="roadmap-title">
       <div className="container-page">
         <SectionHeader
-          eyebrow="Roadmap"
           title={<span id="roadmap-title">What's coming next.</span>}
         />
 

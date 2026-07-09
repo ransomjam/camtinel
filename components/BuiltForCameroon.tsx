@@ -34,7 +34,6 @@ export function BuiltForCameroon() {
           <div>
             <SectionHeader
               align="left"
-              eyebrow="Built for Cameroon"
               title={
                 <span id="cameroon-title">
                   Local context is a detection signal, not decoration.

@@ -28,7 +28,6 @@ export function Solution() {
           <div>
             <SectionHeader
               align="left"
-              eyebrow="What we built"
               title={
                 <span id="solution-title">
                   A cybersecurity assistant that runs on the phone in your pocket.
@@ -56,13 +55,8 @@ export function Solution() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cm-green via-cm-yellow to-cm-red">
                     <Shield className="h-6 w-6 text-white" />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-slate-500">
-                      Currently detects
-                    </div>
-                    <div className="text-base font-semibold text-white">
-                      Camtinel AI Engine
-                    </div>
+                  <div className="text-base font-semibold text-white">
+                    Camtinel AI Engine
                   </div>
                 </div>
 

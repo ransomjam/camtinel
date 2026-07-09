@@ -128,7 +128,6 @@ export function LiveDemo() {
       />
       <div className="container-page">
         <SectionHeader
-          eyebrow="Live demo"
           title={
             <span id="demo-title">
               Watch the engine catch scams in real time.
@@ -289,9 +288,6 @@ export function LiveDemo() {
                   </div>
 
                   <div className="mt-5">
-                    <div className="text-xs uppercase tracking-wider text-slate-500">
-                      Detection reasons
-                    </div>
                     <ul className="mt-3 space-y-2">
                       {result.reasons.map((r, i) => (
                         <motion.li
@@ -324,9 +320,6 @@ export function LiveDemo() {
                         "border-cm-red/25 bg-cm-red/[0.05]",
                     )}
                   >
-                    <div className="text-xs uppercase tracking-wider text-slate-400">
-                      Recommendation
-                    </div>
                     <div className="mt-1">{result.recommendation}</div>
                   </div>
                 </motion.div>
@@ -358,9 +351,6 @@ function VerdictBanner({ result }: { result: AnalysisResult }) {
       </div>
       <div className="mt-3 flex items-end justify-between">
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-slate-500">
-            Risk score
-          </div>
           <div className="mt-1 flex items-baseline gap-1">
             <span className="font-mono text-5xl font-semibold text-white">
               {result.score}
