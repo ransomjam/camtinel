@@ -137,19 +137,19 @@ export function Capabilities() {
             <Reveal key={it.title} delay={i * 0.04}>
               <Card
                 hoverable
-                className="group flex min-h-[280px] overflow-hidden rounded-lg p-0"
+                className="group flex min-h-[210px] overflow-hidden rounded-lg p-0"
               >
                 <span
                   aria-hidden
                   className={cn(
-                    "absolute inset-x-0 top-0 h-1",
+                    "absolute inset-x-0 top-0 h-[2px]",
                     toneStyles[it.tone].bar,
                   )}
                 />
                 <div
                   aria-hidden
                   className={cn(
-                    "pointer-events-none absolute -right-12 -top-14 h-36 w-36 rounded-full bg-gradient-to-br to-transparent blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-90",
+                    "pointer-events-none absolute -right-10 -top-12 h-28 w-28 rounded-full bg-gradient-to-br to-transparent blur-2xl opacity-40 transition-opacity duration-300 group-hover:opacity-70",
                     toneStyles[it.tone].wash,
                   )}
                 />
@@ -158,31 +158,31 @@ export function Capabilities() {
                   <div className="flex items-start justify-between gap-3">
                     <div
                       className={cn(
-                        "flex h-14 w-14 items-center justify-center rounded-lg ring-1 transition-transform duration-300 group-hover:-translate-y-0.5",
+                        "flex h-10 w-10 items-center justify-center rounded-lg ring-1 transition-transform duration-300 group-hover:-translate-y-0.5",
                         toneStyles[it.tone].icon,
                       )}
                     >
-                      <it.icon className="h-7 w-7" strokeWidth={1.8} />
+                      <it.icon className="h-[18px] w-[18px]" strokeWidth={1.75} />
                     </div>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-cm-green/30 bg-cm-green/[0.08] px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-cm-green">
-                      <BadgeCheck className="h-3 w-3" strokeWidth={2.2} />
+                    <span className="inline-flex items-center gap-1 rounded-full border border-cm-green/30 bg-cm-green/[0.08] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-cm-green">
+                      <BadgeCheck className="h-2.5 w-2.5" strokeWidth={2.2} />
                       Live
                     </span>
                   </div>
 
-                  <div className="mt-auto pt-10">
+                  <div className="mt-5">
                     <span
                       className={cn(
-                        "rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-wider",
+                        "rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide",
                         toneStyles[it.tone].chip,
                       )}
                     >
                       {it.metric}
                     </span>
-                    <h3 className="mt-4 text-lg font-semibold leading-tight text-white">
+                    <h3 className="mt-2.5 text-[15px] font-medium leading-snug text-white">
                       {it.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-slate-400">
                       {it.text}
                     </p>
                   </div>

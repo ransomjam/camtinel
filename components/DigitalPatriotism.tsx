@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-import { Card } from "@/components/ui/Card";
+import { FeatureTile } from "@/components/ui/FeatureTile";
 import { FlagPattern } from "./ui/FlagPattern";
 
 type Pillar = { icon: LucideIcon; title: string; text: string; tone: "g" | "y" | "r" };
@@ -49,9 +49,9 @@ const pillars: Pillar[] = [
 ];
 
 const toneMap = {
-  g: "text-cm-green ring-cm-green/25 bg-cm-green/10",
-  y: "text-cm-yellow ring-cm-yellow/25 bg-cm-yellow/10",
-  r: "text-cm-red ring-cm-red/25 bg-cm-red/10",
+  g: "green",
+  y: "yellow",
+  r: "red",
 } as const;
 
 export function DigitalPatriotism() {
@@ -76,20 +76,17 @@ export function DigitalPatriotism() {
           }
         />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {pillars.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.05}>
-              <Card hoverable>
-                <div className={`flex h-10 w-10 items-center justify-center rounded-lg ring-1 ${toneMap[p.tone]}`}>
-                  <p.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 text-[15px] font-semibold text-white">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-slate-400">
-                  {p.text}
-                </p>
-              </Card>
+            <Reveal key={p.title} delay={i * 0.05} className="h-full">
+              <FeatureTile
+                icon={p.icon}
+                title={p.title}
+                text={p.text}
+                badge={`Impact ${String(i + 1).padStart(2, "0")}`}
+                tone={toneMap[p.tone]}
+                minHeight="min-h-[210px]"
+              />
             </Reveal>
           ))}
         </div>

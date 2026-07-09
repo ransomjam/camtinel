@@ -3,7 +3,7 @@
 import { Signal, Phone, Coins, Languages, Radio, Shield, type LucideIcon } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-import { Card } from "@/components/ui/Card";
+import { FeatureTile } from "@/components/ui/FeatureTile";
 
 type LocalSignal = { icon: LucideIcon; label: string; sub: string; tone: "g" | "y" | "r" };
 
@@ -17,9 +17,9 @@ const localSignals: LocalSignal[] = [
 ];
 
 const toneMap = {
-  g: "text-cm-green ring-cm-green/25 bg-cm-green/10",
-  y: "text-cm-yellow ring-cm-yellow/25 bg-cm-yellow/10",
-  r: "text-cm-red ring-cm-red/25 bg-cm-red/10",
+  g: "green",
+  y: "yellow",
+  r: "red",
 } as const;
 
 export function BuiltForCameroon() {
@@ -66,19 +66,15 @@ export function BuiltForCameroon() {
               />
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {localSignals.map((s) => (
-                  <Card
+                  <FeatureTile
                     key={s.label}
-                    hoverable
-                    className="text-center"
-                  >
-                    <div className={`mx-auto flex h-10 w-10 items-center justify-center rounded-lg ring-1 ${toneMap[s.tone]}`}>
-                      <s.icon className="h-5 w-5" />
-                    </div>
-                    <div className="mt-3 text-sm font-semibold text-white">
-                      {s.label}
-                    </div>
-                    <div className="text-[11px] text-slate-500">{s.sub}</div>
-                  </Card>
+                    icon={s.icon}
+                    title={s.label}
+                    text={s.sub}
+                    tone={toneMap[s.tone]}
+                    compact
+                    minHeight="min-h-[130px]"
+                  />
                 ))}
               </div>
             </div>
