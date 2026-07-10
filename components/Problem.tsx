@@ -98,7 +98,7 @@ const toneStyles: Record<
 export function Problem() {
   return (
     <section id="problem" className="section" aria-labelledby="problem-title">
-      <div className="container-page">
+      <div className="container-page lg:max-w-[1420px] lg:px-12">
         <SectionHeader
           title={
             <span id="problem-title">
@@ -107,12 +107,12 @@ export function Problem() {
           }
         />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-9 lg:gap-y-6 xl:gap-x-10">
           {threats.map((t, i) => (
             <Reveal key={t.title} delay={i * 0.04}>
               <Card
                 hoverable
-                className="group flex min-h-[270px] overflow-hidden rounded-lg p-0"
+                className="group flex min-h-[270px] overflow-hidden rounded-lg p-0 lg:min-h-[315px]"
               >
                 <span
                   aria-hidden
@@ -129,7 +129,7 @@ export function Problem() {
                   )}
                 />
 
-                <div className="relative flex flex-1 flex-col p-5">
+                <div className="relative flex flex-1 flex-col p-5 lg:p-6">
                   <div className="flex items-start justify-between gap-3">
                     <div
                       className={cn(

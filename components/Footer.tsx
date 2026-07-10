@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Logo } from "./Logo";
 import { site } from "@/lib/site";
 
@@ -59,16 +59,9 @@ export function Footer() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href={site.github}
+                href="https://wa.me/237676051976"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-secondary text-xs"
-              >
-                <Github className="h-4 w-4" />
-                GitHub
-              </a>
-              <a
-                href={`mailto:${site.contact}`}
                 className="btn-secondary text-xs"
               >
                 <Mail className="h-4 w-4" />

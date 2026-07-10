@@ -36,7 +36,6 @@ export function BuiltForCameroon() {
               align="left"
               title={
                 <span id="cameroon-title">
-                  Local context is a detection signal, not decoration.
                 </span>
               }
             />
