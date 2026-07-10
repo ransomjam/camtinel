@@ -5,10 +5,26 @@ import {
   Smartphone,
   WifiOff,
   Sparkles,
+  ShieldAlert,
   type LucideIcon,
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { FlagPattern } from "./ui/FlagPattern";
+
+const installSteps = [
+  {
+    title: "Uninstall any previous Camtinel first",
+    body: "If you installed an earlier build (from Android Studio or a colleague), remove it. Otherwise Android will refuse the new install with \"App not installed\" because the signatures don't match.",
+  },
+  {
+    title: "Allow install from your browser",
+    body: "When you tap the APK, Android may ask to allow installs from Chrome or your file manager. Enable it once — you can turn it off after installing.",
+  },
+  {
+    title: "Tap \"Install anyway\" on the Play Protect prompt",
+    body: "Camtinel is signed by us but isn't on Play Store yet, so Play Protect shows a warning on first install. Tap \"More details\" then \"Install anyway\".",
+  },
+];
 
 const chips: { icon: LucideIcon; title: string; text: string }[] = [
   {
@@ -71,9 +87,42 @@ export function Download() {
                 <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-white/[0.06] pt-6 sm:grid-cols-4">
                   <MiniStat value="1.2.0" />
                   <MiniStat value="Android 8+" />
-                  <MiniStat value="≈ 15 MB" />
+                  <MiniStat value="≈ 9 MB" />
                   <MiniStat value="Free beta" />
                 </dl>
+              </Reveal>
+
+              <Reveal delay={0.3}>
+                <div className="mt-6 rounded-2xl border border-cm-yellow/25 bg-cm-yellow/[0.04] p-5">
+                  <div className="flex items-center gap-2">
+                    <ShieldAlert className="h-4 w-4 text-cm-yellow" />
+                    <span className="text-xs font-semibold uppercase tracking-wider text-cm-yellow">
+                      Install steps
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[13px] leading-relaxed text-slate-300">
+                    Camtinel installs directly from the APK. Android shows a
+                    Play Protect warning on first install because we're not on
+                    Play Store yet — this is expected.
+                  </p>
+                  <ol className="mt-4 space-y-3">
+                    {installSteps.map((s, i) => (
+                      <li key={s.title} className="flex gap-3">
+                        <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-cm-yellow/15 text-[11px] font-semibold text-cm-yellow">
+                          {i + 1}
+                        </span>
+                        <div className="min-w-0">
+                          <div className="text-[13px] font-medium text-white">
+                            {s.title}
+                          </div>
+                          <div className="mt-0.5 text-[12px] leading-relaxed text-slate-400">
+                            {s.body}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
               </Reveal>
             </div>
 
