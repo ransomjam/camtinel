@@ -26,7 +26,10 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   keywords: [
-    "Caminel",
+    "Camtinel",
+    "Camtinel Cameroon",
+    "Camtinel app",
+    "Camtinel APK",
     "cybersecurity Cameroon",
     "phishing detection",
     "Mobile Money fraud",
@@ -75,6 +78,58 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    alternateName: [
+      "Camtinel Cameroon",
+      "Camtinel App",
+      "Camtinel Cybersecurity",
+    ],
+    url: siteUrl,
+    logo: `${siteUrl}/icon.svg`,
+    description: site.description,
+    email: site.contact,
+    foundingLocation: {
+      "@type": "Place",
+      name: "Cameroon",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Cameroon",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    alternateName: "Camtinel Cameroon",
+    url: siteUrl,
+    inLanguage: ["en", "fr"],
+    publisher: { "@type": "Organization", name: site.name },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    name: site.name,
+    operatingSystem: "Android 8+",
+    applicationCategory: "SecurityApplication",
+    description: site.description,
+    url: `${siteUrl}/#download`,
+    downloadUrl: `${siteUrl}/camtinel.apk`,
+    softwareVersion: site.version,
+    inLanguage: ["en", "fr"],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "XAF",
+    },
+    publisher: { "@type": "Organization", name: site.name },
+  },
+];
+
 export default function RootLayout({
   children,
 }: {
@@ -87,6 +142,10 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
