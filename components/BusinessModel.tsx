@@ -12,7 +12,14 @@ type Tier = {
   features: string[];
   cta: string;
   highlight: boolean;
+  href: string;
+  download?: boolean;
+  external?: boolean;
 };
+
+const WA_NUMBER = "237676051976";
+const waLink = (message: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const tiers: Tier[] = [
   {
@@ -27,6 +34,8 @@ const tiers: Tier[] = [
     ],
     cta: "Download APK",
     highlight: false,
+    href: "/camtinel.apk",
+    download: true,
   },
   {
     name: "Premium",
@@ -40,6 +49,8 @@ const tiers: Tier[] = [
     ],
     cta: "Join the waitlist",
     highlight: true,
+    href: waLink("Hi Camtinel, I'd like to join the Premium waitlist."),
+    external: true,
   },
   {
     name: "Enterprise",
@@ -53,6 +64,10 @@ const tiers: Tier[] = [
     ],
     cta: "Talk to us",
     highlight: false,
+    href: waLink(
+      "Hi Camtinel, I'd like to discuss an enterprise partnership.",
+    ),
+    external: true,
   },
 ];
 
@@ -110,15 +125,19 @@ export function BusinessModel() {
                   ))}
                 </ul>
 
-                <button
-                  type="button"
+                <a
+                  href={t.href}
+                  {...(t.download ? { download: "" } : {})}
+                  {...(t.external
+                    ? { target: "_blank", rel: "noreferrer" }
+                    : {})}
                   className={cn(
                     "mt-8 w-full",
                     t.highlight ? "btn-primary" : "btn-secondary",
                   )}
                 >
                   {t.cta}
-                </button>
+                </a>
               </div>
             </Reveal>
           ))}

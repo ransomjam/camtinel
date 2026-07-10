@@ -71,7 +71,7 @@ export function Download() {
                 <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-white/[0.06] pt-6 sm:grid-cols-4">
                   <MiniStat value="1.2.0" />
                   <MiniStat value="Android 8+" />
-                  <MiniStat value="≈ 148 MB" />
+                  <MiniStat value="≈ 15 MB" />
                   <MiniStat value="Free beta" />
                 </dl>
               </Reveal>
