@@ -243,7 +243,7 @@ export function PhoneMockup() {
       {/* Floating side notification chips (populate the space around the phone) */}
       <FloatingNotification
         side="left"
-        top="top-24"
+        top="bottom-24"
         delay={0.6}
         sender="Camtinel"
         text="Scam blocked · MTN impersonation"
@@ -251,7 +251,7 @@ export function PhoneMockup() {
       />
       <FloatingNotification
         side="right"
-        top="bottom-40"
+        top="bottom-56"
         delay={0.9}
         sender="SMS"
         text="Suspicious link filtered"
