@@ -94,8 +94,16 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col-reverse items-start justify-between gap-4 border-t border-white/[0.06] pt-8 sm:flex-row sm:items-center">
-          <div className="text-xs text-slate-500">
-            © {new Date().getFullYear()} {site.name}. Made in Cameroon.
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-slate-500">
+            <span>
+              © {new Date().getFullYear()} {site.name}.
+            </span>
+            <span
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 text-[11px] text-slate-300"
+              aria-label="Built in Cameroon"
+            >
+              Built in Cameroon <span aria-hidden>🇨🇲</span>
+            </span>
           </div>
           <div className="flex items-center gap-2 text-xs text-slate-500">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cm-green" />

@@ -68,6 +68,11 @@ export function BusinessModel() {
           }
         />
 
+        <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-slate-400 md:text-base">
+          Camtinel stays free for every Cameroonian citizen, sustained through
+          enterprise partnerships with banks, telecoms and public agencies.
+        </p>
+
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {tiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.06}>
